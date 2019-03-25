@@ -1,4 +1,4 @@
-# Developer Workflow Queue ExtensionDeveloper Workflow Queue Extension
+# Developer Workflow Queue Extension
 
 > 目的: 以不另起平台為原則整合既有平台(GitLab) 達到控管工程師工作流程佇列的擴充套件
 
