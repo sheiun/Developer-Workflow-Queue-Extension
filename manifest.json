@@ -2,11 +2,24 @@
   "name": "Developer Workflow Queue Extension Extensions",
   "description": "基於 Chrome Extension 架構開發 應用於工作用的 GitLab 的工程師 (開發者) 工作流程佇列",
   "version": "1.0",
+  "manifest_version": 2,
+  "icons": { "128": "images/icon.png" },
   "browser_action": {
+    "default_title": "工程師工作佇列",
     "default_icon": "images/icon.png",
     "default_popup": "popup.html"
   },
-  "permissions": ["https://hack.ap-mic.com/", "https://www.notion.so/apmic/"],
-  "manifest_version": 2,
-  "icons": { "128": "images/icon.png" }
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://hack.ap-mic.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+  "permissions": ["storage"]
 }
